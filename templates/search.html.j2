@@ -1,0 +1,21 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Hello</title>
+    </head>
+    <body>
+        <form method="GET">  
+            <input type="text" name="q" id="q" value="{{ q }}"></input>
+            <button type="submit">Search</button>
+        </form>
+            {% if results %}
+                <h2>Results found: {{ results|length }}</h2>
+                <ol>
+                {% for result in results %}
+                    <li>{{ result.name }}</li>
+                {% endfor %}
+                </ol>
+            {% endif %}
+    </body>
+</html>
+       
